@@ -1,0 +1,11 @@
+﻿生成启动时间为 2018/7/13 22:10:37。
+     1>项目“E:\CPlusTest\10\1\stock1\stock1.vcxproj”在节点 2 上(Build 个目标)。
+     1>CustomBuild:
+         Generate moc_predefs.h
+       Link:
+         stock1.vcxproj -> E:\CPlusTest\10\1\stock1\debug\stock1.exe
+     1>已完成生成项目“E:\CPlusTest\10\1\stock1\stock1.vcxproj”(Build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:00.19
