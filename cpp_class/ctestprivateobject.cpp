@@ -1,4 +1,4 @@
-#include "ctestprivateobject.h"
+﻿#include "ctestprivateobject.h"
 #include <iostream>
 using namespace std;
 
@@ -24,9 +24,9 @@ void CTestPrivateObject::ShowTestObjectName()
 {
     std::string objectName ;
     //想想注释的这句有什么问题？
-    //私有继承，私有成员test_objcet_name_在派生对象间是不可见的，没有权限，不能被访问的
+    //私有继承，CTestObject的 私有成员test_objcet_name_在CTestPrivateObject类体内是不可见的，没有权限，不能被访问的
 //    cout << this->test_objcet_name_ << endl;
-    //Get_test_object_name（）方法在私有继承下变成派生类的私有方法，只能在类体内  进行访问
+    //CTestObject的公有方法Get_test_object_name（）在私有继承下变成CTestPrivateObject类的私有方法，只能在类体内 进行访问
     this->Get_test_object_name(objectName);
     cout <<  "CTestPrivateObject ShowTestObjectName :" << objectName << endl;
 }
@@ -49,7 +49,7 @@ void CTestPrivateObject::ConsoleInputTestObjectSecret()
     std::string object_secret;
     cin >> object_secret;
     //想想注释的这句有什么问题？
-    //私有继承下，Set_test_object_secrets私有方法在派生类中成为私有方法，可在派生类 类体内 访问基类的公有方法，但不能通过派生类 对象访问
+    //私有继承下，CTestObject的Set_test_object_secrets私有方法在CTestPrivateObject类中没有访问权限
 //    this->Set_test_object_secret(object_secret);
 }
 
@@ -57,6 +57,6 @@ void CTestPrivateObject::ShowTestObjectSecret()
 {
     std::string object_secret;
     //想想注释的这句有什么问题？
-    //和上面的Set_test_object_secret方法效果一致
+    //私有继承下，CTestObject的Get_test_object_secrets私有方法在CTestPrivateObject类中没有访问权限
 //    this->Get_test_object_secret(object_secret);
 }

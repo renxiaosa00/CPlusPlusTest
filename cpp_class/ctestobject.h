@@ -1,4 +1,4 @@
-#ifndef CTESTOBJECT_H
+﻿#ifndef CTESTOBJECT_H
 #define CTESTOBJECT_H
 #include <string>
 
@@ -12,6 +12,13 @@ public:
     void Set_test_object_name(const std::string& test_object_name);
 
     void Get_test_object_name(std::string& test_object_name) const ;
+
+    void Set_test_object_match(const std::string & test_object_match);
+
+    void Get_test_object_match(std::string & test_object_match) const;
+
+    void Show_test_object_secret(const std::string &test_object_match) const;
+
 protected:
     void Set_test_object_asset(const std::string& test_object_asset);
 
@@ -27,6 +34,7 @@ private:
      std::string  test_object_name_;
      std::string  test_object_asset_;
      std::string  test_object_secret_;
+     std::string  test_object_match_;
 
 
 };

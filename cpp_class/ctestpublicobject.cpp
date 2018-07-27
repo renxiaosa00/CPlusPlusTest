@@ -1,4 +1,4 @@
-#include "ctestpublicobject.h"
+﻿#include "ctestpublicobject.h"
 #include <iostream>
 using namespace std;
 
@@ -24,7 +24,7 @@ void CTestPublicObject::ShowTestObjectName()
 {
     std::string objectName ;
     //想想注释的这句有什么问题？
-    //公有继承情况下，基类的私有成员test_objcet_name_在派生类中是不可见的，没有权限被派生类访问
+    //公有继承情况下，CTestObject的私有成员test_objcet_name_在CTestPublicObject中是不可见的，没有权限被CTestPublicObject类访问
 //    cout << this->test_objcet_name_ << endl;
     this->Get_test_object_name(objectName);
     cout <<  "CTestPrivateObject ShowTestObjectName :" << objectName << endl;
@@ -48,7 +48,7 @@ void CTestPublicObject::ConsoleInputTestObjectSecret()
     std::string object_secret;
     cin >> object_secret;
     //想想注释的这句有什么问题？
-    //公有继承情况下，基类的私有方法Set_test_object_secret在派生类中无权限，不能被派生类访问
+    //公有继承情况下，CTestObject的私有方法Set_test_object_secret在CTestPublicObject类中无权限，不能被CTestPublicObject类访问
 //    this->Set_test_object_secret(object_secret);
 }
 
@@ -56,6 +56,6 @@ void CTestPublicObject::ShowTestObjectSecret()
 {
     std::string object_secret;
     //想想注释的这句有什么问题？
-    //感觉这个和上面的Set_test_object_secret方法效果一致
-//    this->Get_test_object_secret(object_secret);
+    //公有继承情况下，CTestObject的私有方法Get_test_object_secret在CTestPublicObject类中无权限，不能被CTestPublicObject类访问
+    //this->Get_test_object_secret(object_secret);
 }
