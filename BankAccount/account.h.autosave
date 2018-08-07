@@ -1,0 +1,16 @@
+﻿#ifndef ACCOUNT_H
+#define ACCOUNT_H
+#include <string>
+
+class account
+{
+    
+private:
+    string name;
+    string 
+    
+public:
+    account();
+};
+
+#endif // ACCOUNT_H
