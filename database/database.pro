@@ -25,8 +25,15 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 
 SOURCES += main.cpp\
-        mainwindow.cpp
+        mainwindow.cpp \
+    rxsmatrix.cpp \
+    rxsmatrixcompution.cpp
 
-HEADERS  += mainwindow.h
+HEADERS  += mainwindow.h \
+    rxsmatrix.h \
+    rxsmatrixcompution.h \
+    rxsconfig.h \
+    rxserror.h \
+    rxstype.h
 
 FORMS    += mainwindow.ui
