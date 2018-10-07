@@ -10,6 +10,21 @@ class RxsMatrix
 {
 public:
     RxsMatrix();
+    ~RxsMatrix();
+
+    RxsMatrix(const QVector<double>& elements_value, uint32_t row_size,   uint32_t column_size);
+
+
+    enum MatrixError
+    {
+        NO_ERROR =  0,
+        ERROR_SIZE = 1
+    };
+
+public:
+    MatrixError ResetMatrix(const QVector<double>& elements_value, uint32_t row_size,   uint32_t column_size);
+
+public:
 
     bool IsSquareMatrix() const
     {

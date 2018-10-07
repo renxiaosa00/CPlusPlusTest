@@ -45,3 +45,26 @@ MatrixComputionResult matrix_compution::GetDeterminant(const RxsMatrix &matrix, 
     }
     return OK;
 }
+
+MatrixComputionResult matrix_compution::Multiplication(const RxsMatrix &matrix_left, const RxsMatrix &matrix_right, RxsMatrix &matrix_result)
+{
+    if (matrix_left.get_column_size() !=  matrix_right.get_row_size())
+    {
+        return CAN_NOT_MULTIPLICATION;
+    }
+    QVector<double> vect_left;
+    matrix_left.get_elements_value(vect_left);
+    QVector<double> vect_right;
+    matrix_right.get_elements_value(vect_right);
+
+    QVector<double> vect_result;
+    for (unsigned int i = 0; i < matrix_left.get_row_size(); i++)
+    {
+        for (unsigned int j = 0; j < matrix_right.get_column_size(); j++)
+        {
+
+        }
+    }
+
+    return OK;
+}
