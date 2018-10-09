@@ -52,6 +52,7 @@ MatrixComputionResult matrix_compution::Multiplication(const RxsMatrix &matrix_l
     {
         return CAN_NOT_MULTIPLICATION;
     }
+    unsigned int n = matrix_right.get_column_size();
     QVector<double> vect_left;
     matrix_left.get_elements_value(vect_left);
     QVector<double> vect_right;
@@ -60,11 +61,21 @@ MatrixComputionResult matrix_compution::Multiplication(const RxsMatrix &matrix_l
     QVector<double> vect_result;
     for (unsigned int i = 0; i < matrix_left.get_row_size(); i++)
     {
-        for (unsigned int j = 0; j < matrix_right.get_column_size(); j++)
+        double value_total = 0.0;
+        for(uint32_t j = 0; j < matrix_right.get_column_size(); j++ )
         {
 
-        }
+            value_total =0.0;
+            for ( uint32_t k = 0; k < n; k++ )
+            {
+                double value_left = matrix_left[n*i + k];
+                double value_right = matrix_right[n*i*k];
+                value_total += value_left*value_right;
+            }
+            vect_result.push_back(value_total);
+         }
     }
 
+    matrix_result.ResetMatrix(vect_result,matrix_left.get_row_size(),matrix_right.get_column_size());:
     return OK;
 }
